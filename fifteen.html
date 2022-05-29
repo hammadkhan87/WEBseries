@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let complete= true;
+        // let prom =new Promise(function(resolve,reject){
+        //     if(complete){
+        //         resolve("i am sucessful");
+
+        //     }
+        //     else{
+        //         reject('i am fail');
+
+        //     }
+        // });
+        // console.log(prom);
+        function prom(complete){
+        return new Promise(function(resolve,reject){
+            console.log("fetching data please wait....")
+            setTimeout(()=>{
+                if(complete){
+                resolve("successful")
+
+            }
+            else{
+                reject("failer")
+            }
+            },3000);
+            
+        });
+        }
+        let onfulfilment=(result)=>{
+            console.log(result);
+
+        }
+        let onreject=(result)=>{
+            console.log(result);
+
+        }
+        prom(false).then(onfulfilment).catch(onreject);
+
+    </script>
+    
+</body>
+</html>

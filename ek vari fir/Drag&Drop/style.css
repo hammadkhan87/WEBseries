@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color:steelblue;
+    display:flex;
+ 
+    justify-content:center;
+    align-items: center;
+    overflow:hidden;
+    margin:0;
+}
+.empty{
+    
+ height:150px;
+ width:150px;
+margin:10px;
+border:solid 3px  black;
+background:white;
+}
+.fill{
+    background-image: url("mr.jpg");
+    height:145px;
+    width: 145px;
+    cursor:pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+.hold{
+    border:solid 3px #ccc;
+}
+.hovered{
+    background-color: #333;
+    border-color: white;
+    border-style: dashed;
+
+
+}
+
+@media(max-width:800px){
+    body{
+        flex-direction: column; 
+
+    }
+}

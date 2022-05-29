@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 10px 50px;
+        }
+
+        .formdesign {
+
+
+
+
+            margin: 10px;
+
+        }
+
+        .formdesign input {
+          margin: 10px;
+            padding: 2px;
+            font-size: 15px;
+            height: 20px;
+            border: 1px solid blue;
+            width: 30%;
+        }
+
+        .formerror {
+            color: red;
+        }
+        .but{
+          
+            width: 120px;
+            height: 70%;
+            font-size: 20px;
+            margin: 20px 10px;
+            
+            border-radius: 16px;
+            
+           
+        }
+    </style>
+</head>
+
+<body>
+    <h2>this is form
+    </h2>
+    <form name="myform" action="/myaction.php " onsubmit="return validation()" method="post">
+        <div class="formdesign" id="name">
+           Name: 
+            <input type="text" name="fname" required ><b><span class="formerror"></span></b>
+        </div>
+        <div class="formdesign" id="email">
+            <label for="">Email: </label>
+            <input type="email" name="femail" required><b><span class="formerror"></span></b>
+        </div>
+        <div class="formdesign" id="phone">
+            <label for="">Phone: </label>
+            <input type="phone" name="fphone"><b><span class="formerror"></span></b>
+        </div>
+        <div class="formdesign" id="password">
+            Password:
+            <input type="password" name="fpassword" required><b><span class="formerror"></span></b>
+        </div>
+        <div class="formdesign" id="cpass">
+            Confirm Pass: 
+            <input type="password" name="cpass"><b><span class="formerror"></span></b>
+        </div>
+        <input type="submit" value="submit" class="but">
+ 
+
+
+
+
+    </form>
+    <script>
+        function clearerrors()
+        {
+            var error= document.getElementsByClassName("formerror");
+            for(let item of error){
+                item.innerHTML="";
+            }
+        }
+      function seterror(id,error){
+          var element =document.getElementById(id);
+          element.getElementsByClassName('formerror')[0].innerHTML=error; 
+          
+
+      }
+      function validation(){
+          var returnval=true;
+          var name=document.forms['myform']["fname"].value;
+          if(name.length<5){
+              seterror("name","*name length is to short");
+            
+              returnval=false;
+          }
+          if(name.length == 0){
+              seterror("name","*please enter the name");
+              
+              returnval=false;
+          }
+          var email=document.forms['myform']["femail"].value;
+          if(email.length>15){
+              seterror("email","*email length is to long");
+             
+              returnval=false;}
+              var phone=document.forms['myform']["fphone"].value;
+          if(phone.length!=10){
+              seterror("phone","*phone must contain 10 digits");
+            
+
+              returnval=false;}
+              var pass=document.forms['myform']["fpassword"].value;
+              var cpass=document.forms['myform']["cpass"].value;
+
+          if(phone.length!=10){
+              seterror("p","*phone must contain 10 digits");
+              if(pass.length<5){
+                  seterror("pass","lenth is short");
+              }
+              if(pass!=cpass){
+                  seterror("pass","*enter the crorreect value")
+              }
+            
+              returnval=false;}
+
+          console.log(name);
+          return returnval;
+
+      }
+    </script>
+</body>
+
+</html>

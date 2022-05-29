@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=" initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //array in js
+        var a=[1,2,3,"c"];
+        var ary=new Array(1,2,2,2,"d");
+        //aray with length 
+        var aryy= new Array(3);
+        aryy[0]=10;
+        aryy[1]=13;
+        aryy[2]=1;
+        //multideminions array
+        var ar=[
+            ["khan",10,"male"],
+            ["stree",22,"lok"],
+            ["non",21,"male"]
+        ];
+
+
+
+        document.write(a+"<br>");
+        document.write(ary+"<br>");
+        document.write(aryy+"<br>");
+        for(var i=0;i<=2;i++){
+			document.write("<br>");	
+
+            for(var a=0;a<=2;a++){
+                document.write(ar[i][a]);
+            }
+        }
+   
+   </script>
+    
+</body>
+</html>
