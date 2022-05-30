@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>forms</h1>
+    <input type="text" id="text" onfocus="abc(this)" onblur="dd(this)" oninput="tel(this)">
+<div id="test"></div>
+<script>
+    var x;
+function abc(ele){
+    ele.style.background="gray"
+}
+function dd(ele){
+    ele.style.background =""
+}
+function tel(ele){
+x= ele.value;
+document.getElementById("test").innerText=x;
+}
+
+
+</script>
+
+</body>
+</html>
